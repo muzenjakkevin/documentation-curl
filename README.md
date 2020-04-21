@@ -50,3 +50,4 @@ curl -H "Content-Type:application/json" http://api.softhouse.rocks/users/1 | jq
   "__v": 0
 }
 ```
+---------------------
