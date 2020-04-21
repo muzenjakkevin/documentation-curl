@@ -8,7 +8,7 @@
 curl -H "Content-Type:application/json" http://api.softhouse.rocks/users/1 | jq >
 ```
 
-#### Answers
+#### Response:
 ```
 HTTP/2 200 
 x-powered-by: Express
