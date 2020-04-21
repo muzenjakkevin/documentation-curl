@@ -8,6 +8,19 @@
 curl -H "Content-Type:application/json" http://api.softhouse.rocks/users/1 | jq >
 ```
 
+#### Answers
+```
+HTTP/2 200 
+x-powered-by: Express
+access-control-allow-origin: *
+content-type: application/json; charset=utf-8
+content-length: 253
+etag: W/"fd-9bEzwjdoX4y6CD1Ks/cPEoofFw4"
+date: Tue, 21 Apr 2020 08:17:44 GMT
+via: 1.1 google
+alt-svc: clear
+```
+
 #### Gets:
 
 ```
