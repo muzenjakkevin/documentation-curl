@@ -30,7 +30,7 @@ curl -H "Content-Type:application/json" http://api.softhouse.rocks/users/1 | jq
 
 #### Response:
 
-```
+```json
  {
   "address": {
     "geo": {
@@ -81,7 +81,7 @@ curl -H "Content-Type:application/json" https://api.softhouse.rocks/posts/1 | jq
 
 #### Response from jq:
 
-```
+```json
 {
   "_id": "5e806d9f42fbde006b6b9ecf",
   "userId": 1,
