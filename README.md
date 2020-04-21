@@ -4,8 +4,9 @@
 ---------------------
 #### Getting resource data: 
 
+##### /users
 ```
-curl -i -H "Content-Type:application/json" http://api.softhouse.rocks/users/1
+curl -i -H "Content-Type:application/json" http://api.softhouse.rocks/users
 ```
 
 #### Response:
