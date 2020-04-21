@@ -52,3 +52,47 @@ curl -H "Content-Type:application/json" http://api.softhouse.rocks/users/1 | jq
 }
 ```
 ---------------------
+
+### HTTP Methods: Post
+---------------------
+#### Creating resource data: 
+
+```
+curl -i -X POST -H "Content-Type:application/json" http://api.softhouse.rocks/posts -d '{"title":"Hi, World", "body":"Fresh as morning dew", "userId": "1"}'
+```
+
+#### Response:
+```
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 112
+ETag: W/"70-Xq/1fb0vbdpeGv+Pb/lNzfBf9gM"
+Date: Tue, 21 Apr 2020 09:02:09 GMT
+Via: 1.1 google
+
+{"_id":"5e9eb69109cee0002106f31a","body":"Fresh as morning dew","title":"Hi, World","userId":1,"id":826,"__v":0}
+
+```
+
+#### Pipes to jq:
+
+```
+ curl  -X POST -H "Content-Type:application/json" http://api.softhouse.rocks/posts -d '{"title":"Hi, World", "body":"Fresh as morning dew", "userId": "1"}' | jq
+
+```
+
+#### Response:
+
+```json
+{
+ "_id": "5e9eb74d09cee0002106f31c",
+  "body": "Fresh as morning dew",
+  "title": "Hi, World",
+  "userId": 1,
+  "id": 828,
+  "__v": 0
+}
+```
+--------------
+
