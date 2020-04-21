@@ -4,11 +4,14 @@
 
 #### Getting resource data: 
 
-[comment]: < curl -H "Content-Type:application/json" http://api.softhouse.rocks/users/1 | jq >
+```
+curl -H "Content-Type:application/json" http://api.softhouse.rocks/users/1 | jq >
+```
 
 #### Gets:
 
-[comment]: < {
+```
+ {
   "address": {
     "geo": {
       "lat": -37.3159,
@@ -25,4 +28,5 @@
   "username": "Bret",
   "email": "Sincere@april.biz",
   "__v": 0
-}>
+}
+```
