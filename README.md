@@ -1,7 +1,7 @@
 # documentation-curl
 
-### HTTP Methods: Get *separate paragraph*
-
+### HTTP Methods: Get
+---------------------
 #### Getting resource data: 
 
 ```
@@ -50,4 +50,3 @@ curl -H "Content-Type:application/json" http://api.softhouse.rocks/users/1 | jq
   "__v": 0
 }
 ```
-======
