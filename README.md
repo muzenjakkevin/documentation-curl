@@ -1,8 +1,8 @@
 # documentation-curl
 
 ### HTTP Methods: Get
-
-#### Getting resource data - users/1: 
+=====================================================================================================
+#### Getting resource data: 
 
 ```
 curl -i -H "Content-Type:application/json" http://api.softhouse.rocks/users/1
@@ -50,45 +50,4 @@ curl -H "Content-Type:application/json" http://api.softhouse.rocks/users/1 | jq
   "__v": 0
 }
 ```
-
-#### Getting resource data - posts/1:
-
-```
-curl -i  -H "Content-Type:application/json" https://api.softhouse.rocks/posts/1
-```
-
-#### Response:
-
-```
-HTTP/2 200 
-x-powered-by: Express
-access-control-allow-origin: *
-content-type: application/json; charset=utf-8
-content-length: 316
-etag: W/"13c-iqD6A3ivz4dRZ1d/uIZLXBts6BU"
-date: Tue, 21 Apr 2020 08:35:16 GMT
-via: 1.1 google
-alt-svc: clear
-
-{"_id":"5e806d9f42fbde006b6b9ecf","userId":1,"id":1,"title":"sunt aut facere repellat provident occaecati excepturi optio reprehenderit","body":"quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto","__v":0}
-```
-
-#### Pipes to jq:
-
-```
-curl -H "Content-Type:application/json" https://api.softhouse.rocks/posts/1 | jq
-```
-
-#### Response from jq:
-
-```json
-{
-  "_id": "5e806d9f42fbde006b6b9ecf",
-  "userId": 1,
-  "id": 1,
-  "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-  "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
-  "__v": 0
-}
-
-```
+======================================================================================================
