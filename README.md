@@ -1,7 +1,7 @@
 # documentation-curl
 
-### HTTP Methods: Get
-======
+### HTTP Methods: Get *separate paragraph*
+
 #### Getting resource data: 
 
 ```
