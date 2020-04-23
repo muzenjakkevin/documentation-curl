@@ -88,6 +88,8 @@ Via: 1.1 google
 
 ```
 
+---------------------
+
 #### Pipe it to jq by removing ```-i``` and add ```| jq``` to the end of the request, for it to show the response in JSON format:
 
 ```
