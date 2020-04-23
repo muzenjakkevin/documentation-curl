@@ -6,7 +6,7 @@
 
 ##### Request to api and gets the curtain query you asked for.
 
-#### /users
+/users
 ```
 curl -i -H "Content-Type:application/json" http://api.softhouse.rocks/users
 ```
