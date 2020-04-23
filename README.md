@@ -13,7 +13,7 @@ curl -i -H "Content-Type:application/json" http://api.softhouse.rocks/users
 
 #### Response:
 
-##### Shows response code and other information
+##### Shows response code and other information about the request
 
 ```
 HTTP/1.1 200 OK
@@ -64,12 +64,17 @@ curl -H "Content-Type:application/json" http://api.softhouse.rocks/users/1 | jq
 ---------------------
 #### Creating resource data: 
 
+##### Requests that the server accept the entity enclosed in the request as a new subordinate of the web resource identified by the URI.
+
 ```
 curl -i -X POST -H "Content-Type:application/json" http://api.softhouse.rocks/posts -d '{"title":"Hi, World", "body":"Fresh as morning dew", "userId": "1"}'
 ```
 
 #### Response:
+
+##### Shows response code and other information about the request
 ```
+HTTP/1.1 201 OK
 X-Powered-By: Express
 Access-Control-Allow-Origin: *
 Content-Type: application/json; charset=utf-8
@@ -82,14 +87,14 @@ Via: 1.1 google
 
 ```
 
-#### Pipes to jq:
+#### Pipe it to jq by removing ```-i``` and add ```| jq``` to the end of the request, for it to show the response in JSON format:
 
 ```
  curl  -X POST -H "Content-Type:application/json" http://api.softhouse.rocks/posts -d '{"title":"Hi, World", "body":"Fresh as morning dew", "userId": "1"}' | jq
 
 ```
 
-#### Response:
+#### Response JSON format:
 
 ```json
 {
