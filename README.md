@@ -66,6 +66,7 @@ curl -H "Content-Type:application/json" http://api.softhouse.rocks/users/1 | jq
 
 ##### Requests that the server accept the entity enclosed in the request as a new subordinate of the web resource identified by the URI.
 
+/posts
 ```
 curl -i -X POST -H "Content-Type:application/json" http://api.softhouse.rocks/posts -d '{"title":"Hi, World", "body":"Fresh as morning dew", "userId": "1"}'
 ```
