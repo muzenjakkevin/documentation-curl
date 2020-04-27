@@ -2,9 +2,9 @@
 
 ### HTTP Methods: Get
 ---------------------
-##### Request to api and gets the curtain query you asked for.
+#### Request to api and gets the curtain query you asked for.
 
-#### Getting resource data: 
+##### Getting resource data: 
 /users
 ```
 curl -i -H "Content-Type:application/json" http://api.softhouse.rocks/users
@@ -29,13 +29,13 @@ Via: 1.1 google
 
 ---------------------
 
-#### Pipe it to jq by removing ```-i``` and add ```| jq``` to the end of the request, for it to show the response in JSON format:
+##### Pipe it to jq by removing ```-i``` and add ```| jq``` to the end of the request, for it to show the response in JSON format:
 
 ```
 curl -H "Content-Type:application/json" http://api.softhouse.rocks/users/1 | jq
 ```
 
-#### Response JSON format:
+##### Response JSON format:
 ```json
  {
   "address": {
@@ -87,14 +87,14 @@ Via: 1.1 google
 
 ---------------------
 
-#### Pipe it to jq by removing ```-i``` and add ```| jq``` to the end of the request, for it to show the response in JSON format:
+##### Pipe it to jq by removing ```-i``` and add ```| jq``` to the end of the request, for it to show the response in JSON format:
 
 ```
  curl  -X POST -H "Content-Type:application/json" http://api.softhouse.rocks/posts -d '{"title":"Hi, World", "body":"Fresh as morning dew", "userId": "1"}' | jq
 
 ```
 
-#### Response JSON format:
+##### Response JSON format:
 ```json
 {
  "_id": "5e9eb74d09cee0002106f31c",
@@ -137,13 +137,13 @@ Via: 1.1 google
 
 ---------------------
 
-#### Pipe it to jq by removing ```-i``` and add ```| jq``` to the end of the request, for it to show the response in JSON format:
+##### Pipe it to jq by removing ```-i``` and add ```| jq``` to the end of the request, for it to show the response in JSON format:
 
 ```
 curl -H "Content-Type:application/json" http://api.softhouse.rocks/posts/1 | jq
 ```
 
-#### Response JSON format:
+##### Response JSON format:
 
 ```json
 {
