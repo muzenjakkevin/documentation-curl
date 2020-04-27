@@ -156,3 +156,53 @@ curl -H "Content-Type:application/json" http://api.softhouse.rocks/posts/1 | jq
 }
 ```
 --------------
+
+### HTTP Methods: PATCH
+---------------------
+#### The PATCH method applies partial modifications to a resource.
+
+##### Overwrites and replaces the information of the object you wanted to replace
+
+/posts
+```
+curl -X PATCH http://api.softhouse.rocks/posts/2 -H "Content-Type:application/json" -d '{"body": "Dean Graziosi", "title":"Inspirator, investor and much more", "userId": 2}'
+```
+
+#### Response:
+
+##### When you GET and request the new change to the post
+```
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 128
+ETag: W/"80-T1d9JmvmV4Ne6ydajw5r0w0mD3I"
+Date: Mon, 27 Apr 2020 09:16:04 GMT
+Via: 1.1 google
+
+{"_id":"5e806d9f42fbde006b6b9ed0","userId":2,"id":2,"title":"Inspirator, investor and much more","body":"Dean Graziosi","__v":0
+
+```
+
+---------------------
+
+##### Pipe it to jq by removing ```-i``` and add ```| jq``` to the end of the request, for it to show the response in JSON format:
+
+```
+curl -H "Content-Type:application/json" http://api.softhouse.rocks/posts/2 | jq
+```
+
+##### Response JSON format:
+
+```json
+{
+  "_id": "5e806d9f42fbde006b6b9ed0",
+  "userId": 2,
+  "id": 2,
+  "title": "Inspirator, investor and much more",
+  "body": "Dean Graziosi",
+  "__v": 0
+}
+```
+--------------
