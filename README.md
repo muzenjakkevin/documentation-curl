@@ -206,3 +206,28 @@ curl -H "Content-Type:application/json" http://api.softhouse.rocks/posts/2 | jq
 }
 ```
 --------------
+
+### HTTP Methods: DELETE
+---------------------
+#### The DELETE method deletes the specified resource.
+
+##### Removes the object you chose to delete
+
+/posts
+```
+curl -X DELETE http://api.softhouse.rocks/posts/3
+```
+
+#### Response:
+
+##### When you GET and request the new change to the post
+```
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Length: 0
+ETag: W/"0-2jmj7l5rSw0yVb/vlWAYkK/YBwk"
+Date: Mon, 27 Apr 2020 09:48:09 GMT
+Via: 1.1 google
+```
+--------------
