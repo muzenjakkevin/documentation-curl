@@ -2,10 +2,9 @@
 
 ### HTTP Methods: Get
 ---------------------
-#### Getting resource data: 
-
 ##### Request to api and gets the curtain query you asked for.
 
+#### Getting resource data: 
 /users
 ```
 curl -i -H "Content-Type:application/json" http://api.softhouse.rocks/users
@@ -37,7 +36,6 @@ curl -H "Content-Type:application/json" http://api.softhouse.rocks/users/1 | jq
 ```
 
 #### Response JSON format:
-
 ```json
  {
   "address": {
@@ -62,10 +60,9 @@ curl -H "Content-Type:application/json" http://api.softhouse.rocks/users/1 | jq
 
 ### HTTP Methods: Post
 ---------------------
-#### Creating resource data: 
+#### Requests that the server accept the entity enclosed in the request as a new subordinate of the web resource identified by the URI.
 
-##### Requests that the server accept the entity enclosed in the request as a new subordinate of the web resource identified by the URI.
-
+##### Creating resource data:
 /posts
 ```
 curl -i -X POST -H "Content-Type:application/json" http://api.softhouse.rocks/posts -d '{"title":"Hi, World", "body":"Fresh as morning dew", "userId": "1"}'
@@ -98,7 +95,6 @@ Via: 1.1 google
 ```
 
 #### Response JSON format:
-
 ```json
 {
  "_id": "5e9eb74d09cee0002106f31c",
@@ -111,3 +107,52 @@ Via: 1.1 google
 ```
 --------------
 
+### HTTP Methods: PUT
+---------------------
+#### The PUT method requests that the enclosed entity be stored under the supplied URI. If the URI refers to an already existing resource, it is modified; if the URI does not point to an existing resource, then the server can create the resource with that URI.
+
+##### Creates new resource and replaces the information to the chosen object you decided to create new data on. 
+
+/posts
+```
+curl -X PUT http://api.softhouse.rocks/posts/1 -H "Content-type:application/json" -d '{"id": 1, "body":"Grant Cardone", "title":"Real Estate Mogule", "userId":1}'
+```
+
+#### Response:
+
+##### When you GET and request the new change to the post
+```
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 112
+ETag: W/"70-wC7Rot1BiEiBr9pH+me1h6CuKCA"
+Date: Mon, 27 Apr 2020 06:47:18 GMT
+Via: 1.1 google
+
+{"_id":"5ea143518e9e2e7dc0da6f8a","id":1,"__v":0,"body":"Grant Cardone","title":"Real Estate Mogule","userId":1}
+
+```
+
+---------------------
+
+#### Pipe it to jq by removing ```-i``` and add ```| jq``` to the end of the request, for it to show the response in JSON format:
+
+```
+curl -H "Content-Type:application/json" http://api.softhouse.rocks/posts/1 | jq
+```
+
+#### Response JSON format:
+
+```json
+{
+  "_id": "5ea143518e9e2e7dc0da6f8a",
+  "id": 1,
+  "__v": 0,
+  "body": "Grant Cardone",
+  "title": "Real Estate Mogule",
+  "userId": 1
+}
+```
+--------------
